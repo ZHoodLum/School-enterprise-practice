@@ -1,0 +1,128 @@
+body{
+  margin: 0 auto;
+  padding: 0 auto;
+}
+.top{
+  height: 100px;
+  text-align: center;
+}
+.left{
+  height: 100%;
+  width: 20%;
+  border: 5px soild red;
+  text-align: center;
+}
+.font1{
+  margin-left: 5px;
+  font-weight:bold;
+  font-size:35px;
+  font-family:YouYuan;
+}
+.font2{
+  margin-left: 5px;
+  font-size:25px;
+  font-family:YouYuan;
+}
+.leftcontent{
+    /*三角形*/
+  width:0;   
+  height:0;   
+  border-left:20px solid transparent;   
+  border-right:20px solid transparent;   
+  border-top:20px solid #0066cc;
+}
+.cen{
+  height: 100%;
+  width: 60%;
+}
+ul li{
+  margin-top: 10px;
+  list-style: none;
+}
+form fieldset{
+  border:0;
+  align:center;
+}  
+label{
+  display:inline-block;
+  width:100px;
+  text-align:left;
+  vertical-align: top
+}
+
+.text1{
+  width: 200px;
+  height: 20px;
+  outline:none;
+  padding-left:10px;
+  background-color:red;
+  background: #D8D8D8;
+  border:solid 1px #666;
+ -moz-border-radius:11px;
+ -webkit-border-radius:11px;
+}
+.text2{
+  width: 500px;
+  height: 50px;
+  outline:none;
+  padding-left:10px;
+  background-color:red;
+  background: #D8D8D8;
+  border:solid 1px #666;
+ -moz-border-radius:11px;
+ -webkit-border-radius:11px;
+}
+
+.right{
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+
+/**
+***按钮
+*/
+.flatbtn-blu { 
+  width: 200px;
+  margin-top: 20px;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ display: inline-block;
+ outline: 0;
+ border: 0;
+ color: #edf4f9;
+ text-decoration: none;
+ background-color: #4f94cf;
+ border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ font-size: 1.3em;
+ font-weight: bold;
+ padding: 12px 26px 12px 26px;
+ line-height: normal;
+ text-align: center;
+ vertical-align: middle;
+ cursor: pointer;
+ text-transform: uppercase;
+ text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+ border-radius: 3px;
+ -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+ -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+ box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+/*
+.flatbtn-blu:hover {
+ color: #fff;
+ background-color: #519dde;
+}*/
+.flatbtn-blu:hover {
+ color: black;
+ background-color: white;
+}
+
+.flatbtn-blu:active {
+ -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+ -moz-box-shadow:inset 0 1px 5px rgba(0, 0, 0, 0.1);
+ box-shadow:inset 0 1px 5px rgba(0, 0, 0, 0.1);
+}

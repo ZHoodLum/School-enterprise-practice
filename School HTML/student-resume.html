@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="student-resume.css">
+</head>
+<body>
+	<form id="myform" name="myform" action="******" method="post">
+		<fieldset>
+			<table width="100%" height="900px" border="2" cellspacing="0" cellpadding="0">
+				<!--这个是头部啊-->
+				<tr>
+					<td height="50px;">
+						
+					</td>
+					<td height="50px;">
+						<div style="text-align: center;">
+				          <p>
+				          	<font class="font1">个</font>
+				          	<font class="font1">人</font>
+				          	<font class="font2">简</font>
+				          	<font class="font2">历</font>
+				          </p>
+				          <div class="leftcontent"/>
+				        </div>
+					</td>
+					<td height="50px;">
+						
+					</td>
+				</tr>
+				<tr>
+					<!--左边-->
+					<td class="left">
+						这个是左边
+					</td>
+					<!--中-->
+					<td class="cen" valign="top">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="50%">
+									<div style="float: left;">
+										<ul>
+											<li>
+												<input type="file"  onchange="change(event)">
+												<img src="" id="myimg" style="width: 100px;height: 100px;"> 
+												<script type="text/javascript">
+													function change(ev){       
+												    var event = window.event || ev;
+												    var files = event.target.files[0];
+												    var myimg = document.getElementById("myimg");
+												    myimg.src = URL.createObjectURL(files);
+												}
+												</script>
+											</li>
+											<li>
+												<label>姓名：</label>
+												<input id="sname" name="sname" class="text1"></input>
+											</li>
+											<li>
+												<label>民族：</label>
+												<input id="gender" name="gender" class="text1"></input>
+											</li>
+											<li>
+												<label>籍贯：</label>
+												<input id="city" name="city" class="text1"></input>
+											</li>
+											<li>
+												<label>健康状况：</label>
+												<input id="health" name="health" class="text1"></input>
+											</li>
+											<li>
+												<label>学历：</label>
+												<input id="educationr" name="education"  class="text1"></input>
+											</li>
+											<li>
+												<label>毕业时间：</label>
+												<input id="graduate_time" name="graduate_time" type="date"  class="text1"></input>
+											</li>
+										</ul>
+									</div>
+								</td>
+
+								<td valign="top" width="50%">
+									<div style="float: left;margin-left: 20px;">
+										<ul>
+											<li>
+												<label>性别：</label>
+												<input id="gender " name="gender " class="text1"></input>
+											</li>
+											<li>
+												<label>出生日期：</label>
+												<input id="birthday" name="birthday" class="text1"></input>
+											</li>
+											<li>
+												<label>政治面貌：</label>
+												<input id="politics " name="politics " class="text1"></input>
+											</li>
+											<li>
+												<label>所在学校：</label>
+												<input id="college " name="college " class="text1"></input>
+											</li>
+											<li>
+												<label>主修：</label>
+												<input id="major" name="major" class="text1"></input>
+											</li>
+											<li>
+												<label>邮箱地址：</label>
+												<input id="email " name="email " class="text1"></input>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td colspan="2">
+									<div style=float: left;margin-left: 20px;">
+										<ul>
+											<!---->
+											<li>
+												<label>学习时间：</label>
+												<textarea id="student_continue_time" name="student_continue_time" class="text2" type="date"></textarea>
+											</li>
+											<li>
+												<label>主修：</label>
+												<textarea id="major_course" name="major_course" class="text2"></textarea>
+											</li>
+											<li>
+												<label>证书：</label>
+												<textarea id="credential" name="credential" class="text2"></textarea>
+											</li>
+											<li>
+												<label>自我评价：</label>
+												<textarea id="self_evaluation" name="self_evaluation" class="text2"></textarea>
+											</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td colspan="2" align="center">
+									<div style="text-align: center;">
+										<ul>
+											<li class="lasts">
+									          <input type="submit" name="btn" id="btn" class="flatbtn-blu hidemodal" value="提交" tabindex="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									          <input type="button" name="rbtn" id="rbtn" class="flatbtn-blu hidemodal" value="重置" tabindex="3">
+									        </li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<!--右边-->
+					<td class="right">
+						这个是右边
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
