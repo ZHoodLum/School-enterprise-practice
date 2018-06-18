@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.school.vo.StudentinfoVo" table="studentinfo" schema="school">
+        <id name="sno">
+            <column name="sno" sql-type="int(11)"/>
+        </id>
+        <property name="sname">
+            <column name="sname" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="spwd">
+            <column name="spwd" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="sGender">
+            <column name="s_gender" sql-type="varchar(2)" length="2"/>
+        </property>
+        <property name="major">
+            <column name="major" sql-type="varchar(40)" length="40"/>
+        </property>
+        <property name="city">
+            <column name="city" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sPhone">
+            <column name="s_phone" sql-type="varchar(15)"/>
+        </property>
+        <property name="sCollege">
+            <column name="s_college" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="cE">
+            <column name="C_e" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="sGrade">
+            <column name="s_grade" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

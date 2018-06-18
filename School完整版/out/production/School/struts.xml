@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="main" class="com.school.action.JobAction" method="MainSelect">
+            <result name="success">/main.jsp</result>
+        </action>
+
+        <!-- 登陆 -->
+        <action name="users_login" class="com.school.action.EnterPriseAction" method="login">
+            <result>/index.jsp</result>
+        </action>
+        <!--企业登录-->
+        <action name="CompanyLogins" class="com.school.action.LoginAction" method="ChanceLogin">
+            <result name="enter">/companys/company.jsp</result>
+            <result name="teacher">/WEB-INF/teachertitle.jsp</result>
+        </action>
+
+
+        <action name="deleteEnter" class="com.school.action.EnterPriseAction" method="delete">
+            <result name="success" type="chain">users_login</result>
+            <result name="input">/index.jsp</result>
+        </action>
+
+        <action name="SelectOne" class="com.school.action.EnterPriseAction" method="selectOne">
+            <result name="success">/index.jsp</result>
+            <result name="input">/main.jsp</result>
+        </action>
+        <!--教师注册-->
+        <action name="EnterPriseRegister" class="com.school.action.RegisterAction" method="EnterRegister">
+            <result name="success"></result>
+            <result name="input"></result>
+        </action>
+        <!--企业注册-->
+        <action name="TeacherRegister" class="com.school.action.RegisterAction" method="TeacherRegister">
+            <result name="success"></result>
+            <result name="input"></result>
+        </action>
+
+        <action name="JobInfoAdd" class="com.school.action.JobAction" method="JobInfoAdd">
+            <result name="success">/company/addinformation.jsp</result>
+        </action>
+    </package>
+</struts>
