@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.school.vo.ResumeVo" table="resume" schema="school">
+        <id name="sno">
+            <column name="sno" sql-type="int(11)"/>
+        </id>
+        <property name="sname">
+            <column name="sname" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="gender">
+            <column name="gender" sql-type="varchar(2)" length="2" not-null="true"/>
+        </property>
+        <property name="nationality">
+            <column name="nationality" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="birthday">
+            <column name="birthday" sql-type="date" not-null="true"/>
+        </property>
+        <property name="city">
+            <column name="city" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="politics">
+            <column name="politics" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+        <property name="health">
+            <column name="health" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="college">
+            <column name="college" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="education">
+            <column name="education" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="major">
+            <column name="major" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="graduateTime">
+            <column name="graduate_time" sql-type="date" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="studentContinueTime">
+            <column name="student_continue_time" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="majorCourse">
+            <column name="major_course" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="credential">
+            <column name="credential" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="selfEvaluation">
+            <column name="self_evaluation" sql-type="text" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

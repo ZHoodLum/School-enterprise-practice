@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.school.vo.JobinfoVo" table="jobinfo" schema="school">
+        <id name="jId">
+            <column name="j_id" sql-type="int(11)"/>
+        </id>
+        <property name="jInfo">
+            <column name="j_info" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="job">
+            <column name="job" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="jDate">
+            <column name="j_date" sql-type="timestamp"/>
+        </property>
+        <property name="ename">
+            <column name="ename" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="eCheck">
+            <column name="e_check" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="wage">
+            <column name="Wage" sql-type="varchar(15)" length="15"/>
+        </property>
+    </class>
+</hibernate-mapping>
