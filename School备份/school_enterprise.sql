@@ -1,0 +1,4 @@
+INSERT INTO school.enterprise (eid, ename, epwd, eintroduce, eadd, ephone, email, emanager) VALUES (1, '中科软', '123', '中国最好的java企业', '北京朝阳', '13716505120', '835921502@qq.com', 'w.s');
+INSERT INTO school.enterprise (eid, ename, epwd, eintroduce, eadd, ephone, email, emanager) VALUES (2, '大连滕泰', '123', '大连软件园滕泰科技公司', '大连', '13715684785', '568978545@qq.com', 'Z.sm');
+INSERT INTO school.enterprise (eid, ename, epwd, eintroduce, eadd, ephone, email, emanager) VALUES (3, '沈阳华信', '123', '沈阳华信软件公司', '沈阳', '15998863012', '469458421@qq.com', 'T.rx');
+INSERT INTO school.enterprise (eid, ename, epwd, eintroduce, eadd, ephone, email, emanager) VALUES (4, '沈阳智谷', '123', '沈阳智谷有限公司', '沈阳', '15896887521', '874958158@qq.com', 'L.yb');

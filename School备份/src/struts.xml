@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="default" extends="struts-default" namespace="/">
+
+        <action name="main" class="com.school.action.JobAction" method="MainSelect">
+            <result name="success">/WEB-INF/main.jsp</result>
+        </action>
+        <!--登录-->
+        <action name="CompanyLogins" class="com.school.action.LoginAction" method="ChanceLogin">
+            <result name="enter">/companys/company.jsp</result>
+            <result name="teacher">/teachers/teacher.jsp</result>
+            <result name="student">/WEB-INF/main.jsp</result>
+            <result name="input">/WEB-INF/manger-main.jsp</result>
+            <result name="error">../ERROR.jsp</result>
+        </action>
+        <action name="aaa">
+            <result>/WEB-INF/main.jsp</result>
+        </action>
+        <!--注销-->
+        <action name="everyOneLogout" class="com.school.action.LogooutAction" method="everyOneLogout">
+            <result>/login/login.jsp</result>
+        </action>
+        <!--修改学生信息-->
+        <action name="studentInfoUpdateAction" class="com.school.action.StudentInfoUpdateAction" method="studentInfoUpdate">
+            <result type="chain">main</result>
+            <result name="input"></result>
+        </action>
+
+        <action name="SelectOne" class="com.school.action.EnterPriseAction" method="selectOne">
+            <result name="success">/index.jsp</result>
+            <result name="input">/WEB-INF/main.jsp</result>
+        </action>
+        <!--教师注册-->
+        <action name="EnterPriseRegister" class="com.school.action.RegisterAction" method="enterRegister">
+            <result name="success"></result>
+            <result name="input"></result>
+        </action>
+        <!--企业注册-->
+        <action name="TeacherRegister" class="com.school.action.RegisterAction" method="teacherRegister">
+            <result name="success"></result>
+            <result name="input"></result>
+        </action>
+        <!--学生注册-->
+        <action name="studentinfoRegister" class="com.school.action.RegisterAction" method="studentRegister">
+            <result name="success"></result>
+            <result name="input"></result>
+        </action>
+        <!--管理员注册-->
+        <action name="userinfoRegister" class="com.school.action.RegisterAction" method="userinfoRegister">
+            <result name="success"></result>
+            <result name="input"></result>
+        </action>
+        <!--企业修改学生的实习成绩-->
+        <action name="UpdateStudentScope" class="enterPriseAction" method="updateStudentScope">
+            <result></result>
+        </action>
+        <!--添加招聘信息-->
+        <action name="JobInfoAdd" class="com.school.action.JobAction" method="JobInfoAdd">
+            <result>../companys/company.jsp</result>
+        </action>
+        <!--查询所有实习学生的信息-->
+        <action name="getAllStudentForEnterPrise" class="com.school.action.EnterPriseAction" method="getAllStudent">
+            <result>/companys/student-information.jsp</result>
+        </action>
+
+        <!--查看申请当前企业的某个学生的简历-->
+        <action name="getOneResume" class="com.school.action.ResumeAction" method="getOneResume">
+            <result>/companys/resumeinfo.jsp</result>
+        </action>
+        <!--不允许实习-->
+        <action name="deleteStudentToEnterPrise" method="deleteStudentToEnterPrise" class="com.school.action.ResumeAction">
+        </action>
+        <action name="selectStudentApply" class="com.school.action.EnterPriseAction" method="selectStudentApply">
+            <result>/companys/applicationaudit.jsp</result>
+        </action>
+        <!--管理员界面查看所有企业发布的招聘信息-->
+        <action name="selectAllJobInfo" class="com.school.action.UserAction" method="selectAllJobInfo">
+            <result>../manger/application-company-information.jsp</result>
+        </action>
+        <!--管理员审核企业发布信息的功能-->
+        <action name="selectJobInfo" class="com.school.action.UserAction" method="selectJobInfo">
+            <result>../manger/check_jobinfomation.jsp</result>
+        </action>
+        <!--修改招聘信息的状态-->
+        <action name="updateJobStatus" class="com.school.action.UserAction" method="checkJobInfo">
+            <result type="chain">selectJobInfo</result>
+        </action>
+        <!--查看所有企业的信息-->
+        <action name="getAllEnterPrise" class="com.school.action.UserAction" method="getAllEnterPrise">
+            <result>../manger/company-information.jsp</result>
+        </action>
+        <!--删除企业的信息-->
+        <action name="deleteEnterPrise" class="com.school.action.UserAction" method="deleteEnterPrise">
+            <result type="chain">getAllEnterPrise</result>
+        </action>
+        <!--查询所有教师的信息-->
+        <action name="getAllTeacher" class="com.school.action.UserAction" method="getAllTeacher">
+            <result>../manger/teacher-information.jsp</result>
+        </action>
+        <!--删除教师信息-->
+        <action name="deleteTeacher" class="com.school.action.UserAction" method="deleteTeacher">
+            <result type="chain">getAllTeacher</result>
+        </action>
+        <!--查询学生-->
+        <action name="getAllStudent" class="com.school.action.UserAction" method="getAllStudent">
+            <result>../manger/student-information.jsp</result>
+        </action>
+        <!--删除学生-->
+        <action name="deleteStudent" class="com.school.action.UserAction" method="deleteStudent">
+            <result type="chain">getAllStudent</result>
+        </action>
+        <!--查看详情得到某个招聘信息-->
+        <action name="getOneJobinfo" class="com.school.action.JobAction" method="JobSelectOne">
+            <result>../login/index.jsp</result>
+        </action>
+        <!--向提交简历-->
+        <action name="applyResume" class="com.school.action.JobAction" method="applyResume">
+            <result>/login/index.jsp</result>
+        </action>
+        <!--提交创建新的简历-->
+        <action name="addNewResume" class="com.school.action.ResumeAction" method="addNewResume">
+            <result>../login/login.jsp</result>
+        </action>
+        <!--关联学生和企业-->
+        <action name="addStudentToEnterPrise" class="com.school.action.ResumeAction" method="addStudentToEnterPrise">
+            <result></result>
+        </action>
+
+        <!--异步提交-->
+        <action name="resumeAction" class="com.school.action.ResumeAction" method="check">
+            <result></result>
+        </action>
+        <!--教师查询麾下的学生-->
+        <action name="getStudentForTeacher" class="com.school.action.TeacherAction" method="getStudentForTeacher">
+            <result>/teachers/teachermanager-studentscore.jsp</result>
+        </action>
+        <!--查询同班同学-->
+        <action name="getAllStudentForOtherClass" class="com.school.action.TeacherAction" method="getAllStudentForOtherClass">
+        <result>/teachers/test.jsp</result>
+        </action>
+        <!--教师管理界面分页-->
+        <action name="getAllStudentForOtherClassPage" class="com.school.action.PageAction" method="showAll">
+            <result>/teachers/test.jsp</result>
+        </action>
+        <!--给学生找老师-->
+        <action name="addStudentForTeacher" class="com.school.action.TeacherAction" method="addStudentForTeacher">
+        </action>
+        <!--主界面招聘信息分页-->
+        <action name="getAllJobInfoFromOtherClassPage" class="com.school.action.PageAction" method="getAllJobInfo">
+            <result>/teachers/main2.jsp</result>
+        </action>
+    </package>
+</struts>

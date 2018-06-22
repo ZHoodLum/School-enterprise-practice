@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/backstage.jsp" value="file://$PROJECT_DIR$/web/WEB-INF" />
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/main.jsp" value="file://$PROJECT_DIR$/web/WEB-INF" />
+        <entry key="file://$PROJECT_DIR$/web/WEB-INF/teachertitle.jsp" value="file://$PROJECT_DIR$/web/WEB-INF" />
+        <entry key="file://$PROJECT_DIR$/web/backstage.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/company/addinformation.jsp" value="file://$PROJECT_DIR$/web/company" />
+        <entry key="file://$PROJECT_DIR$/web/company/student-score.jsp" value="file://$PROJECT_DIR$/web/company" />
+        <entry key="file://$PROJECT_DIR$/web/company/studentinformation.html" value="file://$PROJECT_DIR$/web/company" />
+        <entry key="file://$PROJECT_DIR$/web/companys/addinformation.jsp" value="file://$PROJECT_DIR$/web/companys" />
+        <entry key="file://$PROJECT_DIR$/web/companys/addinformations.jsp" value="file://$PROJECT_DIR$/web/companys" />
+        <entry key="file://$PROJECT_DIR$/web/companys/company.jsp" value="file://$PROJECT_DIR$/web/companys" />
+        <entry key="file://$PROJECT_DIR$/web/companys/student-information.jsp" value="file://$PROJECT_DIR$/web/companys" />
+        <entry key="file://$PROJECT_DIR$/web/companys/student-score.jsp" value="file://$PROJECT_DIR$/web/companys" />
+        <entry key="file://$PROJECT_DIR$/web/head.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/left.html" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/login/login-company.jsp" value="file://$PROJECT_DIR$/web/login" />
+        <entry key="file://$PROJECT_DIR$/web/login/login.jsp" value="file://$PROJECT_DIR$/web/login" />
+        <entry key="file://$PROJECT_DIR$/web/main.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/manger/update-company-information.html" value="file://$PROJECT_DIR$/web/manger" />
+        <entry key="file://$PROJECT_DIR$/web/manger/update-student-information.jsp" value="file://$PROJECT_DIR$/web/manger" />
+        <entry key="file://$PROJECT_DIR$/web/registers/register-company.jsp" value="file://$PROJECT_DIR$/web/registers" />
+        <entry key="file://$PROJECT_DIR$/web/registers/register-student.html" value="file://$PROJECT_DIR$/web/registers" />
+        <entry key="file://$PROJECT_DIR$/web/registers/register-teacher.html" value="file://$PROJECT_DIR$/web/registers" />
+        <entry key="file://$PROJECT_DIR$/web/registers/register.html" value="file://$PROJECT_DIR$/web/registers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/main1.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/main2.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/teacher-main.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/teacher.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/teachermanager-studentscore.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/teacherpage.html" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/teacherpage.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+        <entry key="file://$PROJECT_DIR$/web/teachers/test.jsp" value="file://$PROJECT_DIR$/web/teachers" />
+      </map>
+    </option>
+  </component>
+</project>

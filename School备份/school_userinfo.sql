@@ -1,0 +1,1 @@
+INSERT INTO school.userinfo (uid, uname, upwd) VALUES (111, 'admin', 'admin');
