@@ -23,46 +23,29 @@
         <tr align="center">
             <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">学生学号</td>
             <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">学生姓名</td>
+            <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">性别</td>
             <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">专业</td>
-            <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">所在学院</td>
-            <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">在校指导教师</td>
-            <td width="20%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">是否实习</td>
+            <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">居住地</td>
+            <td width="20%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">电子邮件</td>
+            <td width="20%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">电话</td>
+            <td width="20%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">毕业院校</td>
+            <td width="20%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">操作</td>
         </tr>
+        <s:iterator var="allApplyStudentMap" value="#session.allApplyStudentMap">
+            <s:iterator var="applyStudentList" value="#allApplyStudentMap.value">
         <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-            <td style="padding:15px;">15231566</td>
-            <td style="padding:15px;">ZHoodLum</td>
-            <td style="padding:15px;">架构师</td>
-            <td style="padding:15px;">计科</td>
-            <td style="padding:15px;">王岩</td>
-            <td style="padding:15px;">
-                <div class="selectbox">
-                    <select>
-                        <option value="0">审核中</option>
-                        <option value="1">未审核</option>
-                        <option value="2">通过</option>
-                        <option value="3">不通过</option>
-                    </select>
-                </div>
-            </td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.sno"/> </td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.sname"/></td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.sGender"/></td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.major"/></td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.city"/></td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.email"/></td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.sPhone"/></td>
+            <td style="padding:15px;"><s:property value="#applyStudentList.sCollege"/></td>
+            <td style="padding:15px;"><s:a href="getOneResume?sno=%{#applyStudentList.sno}">查看详情</s:a></td>
         </tr>
-
-        <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-            <td style="padding:15px;">15231566</td>
-            <td style="padding:15px;">ZHoodLum</td>
-            <td style="padding:15px;">架构师</td>
-            <td style="padding:15px;">计科</td>
-            <td style="padding:15px;">王岩</td>
-            <td style="padding:15px;">
-                <div class="selectbox">
-                    <select>
-                        <option value="0">审核中</option>
-                        <option value="1">未审核</option>
-                        <option value="2">通过</option>
-                        <option value="3">不通过</option>
-                    </select>
-                </div>
-            </td>
-        </tr>
+            </s:iterator>
+        </s:iterator>
 
     </table>
 </div>

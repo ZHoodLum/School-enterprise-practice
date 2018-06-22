@@ -1,75 +1,68 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="/struts-tags" prefix="s" %>
-<html>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>addinformation</title>
-	<link rel="stylesheet" type="text/css" href="../css/addinformation.css">
+	<link rel="stylesheet" type="text/css" href="../css/addinformations.css">
 
 </head>
 <body>
-	<div class="container">
+<div class="container">
 
-        <div class="checkout-title">
-            <span><hr class="hrLine" style="width:300px;"/>请填写招聘信息<hr class="hrLine" style="width:300px;"/></span>
-        </div>
-        <div>
-        	<form id="myform" name="myform" action="***********">
-		        <table border="0" width="100%"  style="text-align: center;">
-		            <tr>
-		                <td>
-		                    <ul>
-		                        <li id="firtsts">
-		                             <h3>招聘单位:</h3>
-		                            <p><textarea  type="text" name="passwd" placeholder="请填写招聘单位，可精确到街道单元！例如：辽宁省抚顺市望花区滨河路东段2号宏达公司！"></textarea></p>
-		                        </li>
-		                    </ul>
-		                </td>
-		            </tr>
-		            <tr>    
-		                <td>
-		                    <ul>
-		                        <li id="twos">
-		                             <h3>招聘职位:</h3>
-		                            <p><textarea type="text" name="passwd" placeholder="请填写招聘职位，例如程序员，高级架构师等，也可更加详细！"></textarea></p>
-		                        </li>
-		                    </ul>
-		                </td>
-		            </tr>
-		            <tr>
-		                <td>
-		                    <ul>
-		                        <li id="threes">
-		                        	<h3>工资待遇:</h3>
-		                            <p><input type="text" name="passwd" placeholder="请填写工资待遇！例如：10k,100k"/></p>
-		                        </li>
-		                    </ul>
-		                </td>
-		            </tr>
-		            <tr>
-		                <td>
-		                    <ul>
-		                        <li id="lasts">
-		                             <h3>发布时间:</h3>
-		                            <p><input name="passwd" type="date" placeholder="请填写招聘信息发布时间！例如 yy-mm-dd"/></p>
-		                        </li>
-		                    </ul>
-		                </td>
-		            </tr>
-					<tr>
-						<!--***********************************************提交 重置发布信息按钮***********************************************************************-->
-						<td style="float: left;margin: 20px 0 0 270px;">
-							<a href="javascript:;" class="btn" style="float: left;">提交发布信息</a>
-							<input type="reset" name="button" class="btn" value="重置发布信息" style="float: left;margin-left: 50px;">
-						</td>
-
-
-					</tr>
-		            
-		        </table>
-	        </form>
-
-		</div>
+	<div class="checkout-title">
+		<span><hr class="hrLine" style="width:300px;"/>请填写招聘信息<hr class="hrLine" style="width:300px;"/></span>
 	</div>
+	<div>
+		<form id="myform" name="myform" action="JobInfoAdd" method="post">
+			<table border="0" width="100%"  style="text-align: center;">
+				<s:iterator var="enterprisename" value="#session.enterlist">
+				<tr>
+					<td>
+						<label>公司名称:</label>
+						<p class="lasts">
+                            <s:textarea  class="text1" type="text" name="jobinfoVo.ename" value="%{#enterprisename.ename}" readonly="true"></s:textarea>
+						</p>
+					</td>
+				</tr>
+					<tr>
+						<td>
+							<label>招聘详情：</label>
+							<p>
+                                <s:textarea class="text1" type="text" name="jobinfoVo.jInfo" placeholder="请填写招聘职位的详细信息或者要求"></s:textarea>
+							</p>
+						</td>
+					</tr>
+				<tr>
+					<td>
+						<label>招聘职位:</label>
+						<p>
+							<s:textarea class="text1" type="text" name="jobinfoVo.job" placeholder="请填写招聘职位，例如程序员，高级架构师等，也可更加详细！"></s:textarea>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>工资待遇:</label>
+						<p>
+                            <s:textarea  class="text1" type="text" name="jobinfoVo.Wage" placeholder="请填写工资待遇！例如：10k,100k"></s:textarea>
+                        </p>
+					</td>
+				<tr>
+					<!--***********************************************提交 重置发布信息按钮***********************************************************************-->
+					<td class="lasts" style="float: left;margin: 20px 0 0 200px;">
+						<input type="submit" value="提交发布信息" class="btn" style="float: left;">
+						<input type="reset" name="button" class="btn" value="重置发布信息" style="float: left;margin-left: 50px;">
+					</td>
+				</tr>
+				</s:iterator>
+			</table>
+		</form>
+
+	</div>
+</div>
 </body>
 </html>

@@ -27,7 +27,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 <body>
 <div class="navs">
   <div class="nav_left">
-    <a href="../main.jsp">校企实习信息网</a>
+    <a href="../WEB-INF/main.jsp">校企实习信息网</a>
   </div>
 </div>
 <div class="content"/>
@@ -60,19 +60,10 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
             <div class="selectbox" style="margin-bottom: 20px;">
             <s:select name="en" list="{'学生','教师','企业','管理员'}"></s:select>
             </div>
-            <!--
-              <select>
-                <option value="0">学生</option>
-                <option value="1">教师</option>
-                <option value="2">企业</option>
-                <option value="3">管理员</option>
-              </select>
-           -->
-
             <div class="center">
               <s:submit class="flatbtn-blu hidemodal" value="登陆" tabindex="3"/>
               <input type="button" name="registerbtn" id="registerbtn" class="flatbtn-blu hidemodal" value="注册" tabindex="3"
-                     onclick="document.location.href='register/register.html'">
+                     onclick="document.location.href='../registers/register.jsp'">
             </div>
           </s:form>
 

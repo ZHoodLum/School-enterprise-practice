@@ -1,6 +1,6 @@
-/*小标题*/
+@CHARSET "UTF-8";
 .checkout-title{
-  font-family: 微软雅黑;
+  /*font-family: 微软雅黑;*/
   font-size: 20px;
   text-align: center;
   margin-top: 5px;
@@ -13,11 +13,11 @@ td{
   margin:0 auto;
   text-align: center;
 }
-ul li.first
+ul li.firsts
 {
  border-top: 1px solid #DFDFDF;
 }
-ul li.last
+ul li.lasts
 {
  border: none;
  margin-left: 24%;
@@ -33,7 +33,7 @@ ul li{
   border-bottom: 1px solid #DFDFDF;
   overflow:hidden;
 }
-ul li textarea{
+.text1{
   outline:none;
   width:500px;
   height:80px;
@@ -48,7 +48,7 @@ ul li textarea{
   overflow: hidden;  /** 隐藏超出的内容 **/
 
 }
-ul li input{
+.text2{
   outline:none;
   padding: 0 0 10px 0;
   border:1px solid #DFDFDF;

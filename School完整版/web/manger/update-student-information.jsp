@@ -22,24 +22,44 @@
     </div>
 
     <div>
-        <form id="myform" name="myform" action="***********">
+        <s:form id="myform" name="myform" action="studentInfoUpdateAction" theme="simple">
+            <s:iterator value="#session.listStudent" var="student" >
             <table border="0" width="100%"  style="text-align: center;margin-left: 260px;">
+
                 <tr>
                     <td>
                         <ul>
                             <li id="firtsts">
                                 <h3>学生账号:</h3>
-                                <p><input type="text" name="passwd"/></p>
+                                <p>
+                                    <s:textfield name="studentInfoVo.sno" value="%{#student.sno}" readonly="true"></s:textfield>
+                                </p>
                             </li>
                         </ul>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <ul>
+                            <li id="firtsts">
+                                <h3>登陆密码:</h3>
+                                <p>
+                                    <s:textfield name="studentInfoVo.spwd" value="%{#student.spwd}"/>
+                                </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <ul>
                             <li id="firtsts">
                                 <h3>学生名称:</h3>
-                                <p><input type="text" name="passwd"/></p>
+                                <p>
+                                    <s:textfield name="studentInfoVo.sname" value="%{#student.sname}"></s:textfield>
+                                </p>
                             </li>
                         </ul>
                     </td>
@@ -51,10 +71,7 @@
                                 <h3>性别：</h3>
                                 <p>
                                 <div class="selectbox">
-                                    <select>
-                                        <option value="0">男</option>
-                                        <option value="1">女</option>
-                                    </select>
+                                    <s:select list="{'男','女'}" value="%{#student.gender}" name="studentInfoVo.sGender"></s:select>
                                 </div>
                                 </p>
                             </li>
@@ -66,7 +83,9 @@
                         <ul>
                             <li id="threes">
                                 <h3>专业:</h3>
-                                <p><input type="text" name="passwd"/></p>
+                                <p>
+                                    <s:textfield name="studentInfoVo.major" value="%{#student.major}"/>
+                                </p>
                             </li>
                         </ul>
                     </td>
@@ -76,7 +95,9 @@
                         <ul>
                             <li id="threes">
                                 <h3>籍贯:</h3>
-                                <p><input type="text" name="passwd"/></p>
+                                <p>
+                                    <s:textfield name="studentInfoVo.city" value="%{#student.city}"/>
+                                </p>
                             </li>
                         </ul>
                     </td>
@@ -86,7 +107,9 @@
                         <ul>
                             <li id="threes">
                                 <h3>电话:</h3>
-                                <p><input type="text" name="passwd" /></p>
+                                <p>
+                                    <s:textfield name="studentInfoVo.sPhone" value="%{#student.sphone}"/>
+                                </p>
                             </li>
                         </ul>
                     </td>
@@ -96,7 +119,9 @@
                         <ul>
                             <li id="threes">
                                 <h3>邮箱:</h3>
-                                <p><input type="text" name="passwd"/></p>
+                                <p>
+                                    <s:textfield name="studentInfoVo.email" value="%{#student.email}"/>
+                                </p>
                             </li>
                         </ul>
                     </td>
@@ -105,8 +130,10 @@
                     <td>
                         <ul>
                             <li id="threes">
-                                <h3>学院:</h3>
-                                <p><input type="text" name="passwd"/></p>
+                                <h3>学校:</h3>
+                                <p>
+                                    <s:textfield name="studentInfoVo.sCollege" value="%{#student.scollege}"/>
+                                </p>
                             </li>
                         </ul>
                     </td>
@@ -114,23 +141,36 @@
                 <tr>
                     <td>
                         <ul>
-                            <li id="lasts">
-                                <h3>在校指导教师:</h3>
-                                <p><input type="text" name="passwd" /></p>
+                            <li id="threes">
+                                <h3>实习状态:</h3>
+                                <p>
+                                    <s:textfield name="studentInfoVo.cE" value="%{#student.cE}" readonly="true"/>
+                                </p>
                             </li>
                         </ul>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
-                        <a href="javascript:;" class="btn" style="float: left;margin-left: 320px;">保存修改信息</a>
+                        <ul>
+                            <li id="threes">
+                                <h3>实习成绩:</h3>
+                                <p>
+                                    <s:textfield name="studentInfoVo.sGrade" value="%{#student.sGrade}" readonly="true"/>
+                                </p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="保存修改信息" class="btn" style="float: left;margin-left: 320px;">
                     </td>
                 </tr>
 
             </table>
-        </form>
-
+            </s:iterator>
+        </s:form>
     </div>
 </div>
 </body>

@@ -18,7 +18,7 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
 <body>
 <div class="navs">
   <div class="nav_left">
-    <a href="../main.jsp">校企实习信息网</a>
+    <a href="../login/login.jsp">校企实习信息网</a>
   </div>
 </div>
 <div class="content"/>
@@ -32,20 +32,21 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
           <li class="nav-header">导航菜单</li>
           <div id="titles">
             <!--修改信息 跳转的网页-->
-            <a href="../manger/update-company-information.jsp" target="right" style="text-decoration: none;">
+            <a href="../companys/update-company-information.jsp" target="right" style="text-decoration: none;">
               <div id="login">
                 <img src="../images/loginusers.png"  id="circle">
-                <s:iterator var="list" value="#session.list"></s:iterator>
+                <s:iterator var="list" value="#session.enterlist"></s:iterator>
                 <span id="title1"><s:property value="%{#list.emanager}"></s:property></span>
+                <s:a href="everyOneLogout.action">注销</s:a>
               </div>
             </a>
           </div>
 
           <li class="nav-divider"></li>
-          <li mid="tab1" funurl="../companys/addinformation.html"><a tabindex="-1" href="javascript:void(0);">发布招聘信息入口</a></li>
-          <li mid="tab2" funurl="../companys/applicationaudit.html"><a tabindex="-1" href="javascript:void(0);">审核实习申请入口</a></li>
-          <li mid="tab3" funurl="../companys/student-information.html"><a tabindex="-1" href="javascript:void(0);">查询学生信息入口</a></li>
-          <li mid="tab4" funurl="../companys/student-score.html"><a tabindex="-1" href="javascript:void(0);">评判学生实习成绩入口</a></li>
+          <li mid="tab1" funurl="../companys/addinformation.jsp"><a tabindex="-1" href="javascript:void(0);">发布招聘信息</a></li>
+          <li mid="tab2" funurl="selectStudentApply"><a tabindex="-1" href="javascript:void(0);">审核实习申请</a></li>
+          <li mid="tab3" funurl="getAllStudentForEnterPrise"><a tabindex="-1" href="javascript:void(0);">查询实习生信息</a></li>
+          <li mid="tab4" funurl="../companys/student-score.jsp"><a tabindex="-1" href="javascript:void(0);">评判实习生成绩</a></li>
         </ul>
       </div>
     </div>

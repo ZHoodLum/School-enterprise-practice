@@ -17,51 +17,40 @@
         <span><hr class="hrLine" style="width:500px;"/>学生信息查询<hr class="hrLine" style="width:500px;"/></span>
     </div>
     <div id="recruitinformation">
-
+        <s:form>
         <table width="100%" border="0" cellpadding="0" cellspacing="0">
-
-            <tr align="center">
-                <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">学生学号</td>
-                <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">名称</td>
-                <td width="10%"  style="border-bottom: 2px dashed #6bb642;">密码</td>
-                <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">性别</td>
-                <td width="8%"  style=" border-bottom: 2px dashed #6bb642;">专业</td>
-                <td width="8%"  style=" border-bottom: 2px dashed #6bb642;">籍贯</td>
-                <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">电话</td>
-                <td width="10%"  style="border-bottom: 2px dashed #6bb642;">邮箱</td>
-                <td width="10%"  style=" border-bottom: 2px dashed #6bb642;">学院</td>
-                <td width="15%"  style=" border-bottom: 2px dashed #6bb642;">指导教师</td>
-                <td width="15%"  style=" border-bottom: 2px dashed #6bb642;">操作</td>
-            </tr>
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:4px;">153232</td>
-                <td style="padding:4px;">TUJy</td>
-                <td style="padding:4px;">1111</td>
-                <td style="padding:4px;">男</td>
-                <td style="padding:4px;">计科</td>
-                <td style="padding:4px;">内蒙古通辽市</td>
-                <td style="padding:4px;">15645964949</td>
-                <td style="padding:4px;">1589847568@gmail.com</td>
-                <td style="padding:4px;">信息学院</td>
-                <td style="padding:4px;">王岩</td>
-                <td align="center"><a href="update-student-information.jsp">修改</a>||<a href="****">删除</a></td>
-            </tr>
-
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:4px;">153232</td>
-                <td style="padding:4px;">TUJy</td>
-                <td style="padding:4px;">1111</td>
-                <td style="padding:4px;">男</td>
-                <td style="padding:4px;">计科</td>
-                <td style="padding:4px;">内蒙古通辽市</td>
-                <td style="padding:4px;">15645964949</td>
-                <td style="padding:4px;">1589847568@gmail.com</td>
-                <td style="padding:4px;">信息学院</td>
-                <td style="padding:4px;">王岩</td>
-                <td align="center"><a href="******">修改</a>||<a href="****">删除</a></td>
-            </tr>
-
-        </table>
+                <tr align="center">
+                    <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">学生学号</td>
+                    <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">名称</td>
+                    <td width="10%"  style="border-bottom: 2px dashed #6bb642;">密码</td>
+                    <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">性别</td>
+                    <td width="8%"  style=" border-bottom: 2px dashed #6bb642;">专业</td>
+                    <td width="8%"  style=" border-bottom: 2px dashed #6bb642;">籍贯</td>
+                    <td width="5%"  style=" border-bottom: 2px dashed #6bb642;">电话</td>
+                    <td width="10%"  style="border-bottom: 2px dashed #6bb642;">邮箱</td>
+                    <td width="10%"  style=" border-bottom: 2px dashed #6bb642;">学校</td>
+                    <td width="15%"  style=" border-bottom: 2px dashed #6bb642;">实习状态</td>
+                    <td width="15%"  style=" border-bottom: 2px dashed #6bb642;">实习成绩</td>
+                    <td width="15%"  style=" border-bottom: 2px dashed #6bb642;">操作</td>
+                </tr>
+                <s:iterator var="allStudent" value="#session.allStudent">
+                    <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
+                        <td style="padding:4px;"><s:property value="#allStudent.sno"/> </td>
+                        <td style="padding:4px;"><s:property value="#allStudent.sname"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.spwd"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.sGender"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.major"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.city"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.sPhone"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.email"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.sCollege"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.cE"/></td>
+                        <td style="padding:4px;"><s:property value="#allStudent.sGrade"/></td>
+                        <td align="center"><a href="update-student-information.jsp">修改</a>||<s:a href="deleteStudent?sid=%{#allStudent.sno}">删除</s:a></td>
+                    </tr>
+                </s:iterator>
+            </table>
+        </s:form>
     </div>
 </body>
 </html>

@@ -35,7 +35,7 @@
 </head>
 <body>
     <div id="login">
-        <span id="title"><a href="../main.html" style="text-decoration: none;color:black;" target="_top">School enterprise cooperation</a></span>
+        <span id="title"><a href="../login/login.jsp" style="text-decoration: none;color:black;" target="_top">School enterprise cooperation</a></span>
         <span id="title1"><a href="update-manger-information.jsp" style="text-decoration: none;color:black;" target="right">欢迎您，管理员</a></span>
     </div>
 </body>

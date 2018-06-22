@@ -1,0 +1,1 @@
+INSERT INTO school.enterprise_studentinfo2 (id, eid, sid) VALUES (109852365, 1, 1530110213);

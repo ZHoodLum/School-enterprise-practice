@@ -35,10 +35,10 @@
                 <ul class="nav nav-list" id="menuSideBar">
                     <li class="nav-header">导航菜单</li>
                     <li class="nav-divider"></li>
-                    <li mid="tab1" funurl="register-student.jsp"><a tabindex="-1" href="javascript:void(0);">学生注册入口</a></li>
-                    <li mid="tab2" funurl="register-teacher.jsp"><a tabindex="-1" href="javascript:void(0);">教师注册入口</a></li>
-                    <li mid="tab3" funurl="register-company.jsp"><a tabindex="-1" href="javascript:void(0);">企业注册入口</a></li>
-                    <li mid="tab4" funurl="register-manger.jsp"><a tabindex="-1" href="javascript:void(0);">管理员注册入口</a></li>
+                    <li mid="tab1" funurl="register-student.jsp"><a tabindex="-1" href="javascript:void(0);">学生注册</a></li>
+                    <li mid="tab2" funurl="register-teacher.jsp"><a tabindex="-1" href="javascript:void(0);">教师注册</a></li>
+                    <li mid="tab3" funurl="register-company.jsp"><a tabindex="-1" href="javascript:void(0);">企业注册</a></li>
+                    <li mid="tab4" funurl="register-manger.jsp"><a tabindex="-1" href="javascript:void(0);">管理员注册</a></li>
                 </ul>
             </div>
         </div>

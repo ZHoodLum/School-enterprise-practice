@@ -73,14 +73,14 @@ body{
 	margin-top: 5px;
 	width:100%;
 	height: 678px;
-	border: solid 1 #FFFFFF;
 
 	display:block;
+	/*
 	background: url(../images/5846.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;
+	background-size: cover;*/
 }
 #titlecontent{
 	width: 100%;

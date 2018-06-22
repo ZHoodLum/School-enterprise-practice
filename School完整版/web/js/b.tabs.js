@@ -1,18 +1,4 @@
-/**
- * b.tabs.js
- * base on Bootstrap Tab
- * 
- * 导航功能扩展，可动态添加，可关闭
- * 使用后可将系统改造为以标签页来打开页面的模式
- * 
- * @author Terry
- * created : 2016.03.17
- * 
- * changelog:
- * 2017.07.21 - 重构代码
- *              解决IE下关闭标签页后切换其它标签页不能获得焦点问题
- *  
- */
+
 !function ($) {
 	"use strict";
 	

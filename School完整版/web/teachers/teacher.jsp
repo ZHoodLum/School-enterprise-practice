@@ -33,17 +33,19 @@ div.menuSideBar .nav-list > li > a, div.menuSideBar .dropdown-menu li a { -webki
           <li class="nav-header">导航菜单</li>
           <div id="titles">
             <!--修改信息 跳转的网页-->
-            <a href="../manger/update-teacher-information.jsp" target="right" style="text-decoration: none;">
+            <s:a href="../manger/update-teacher-information.jsp" target="right" style="text-decoration: none;">
               <div id="login">
                 <img src="../images/loginusers.png"  id="circle">
-                <span id="title1">胡歌</span>
               </div>
-            </a>
+              <s:iterator value="#session.teacher" var="teacher">
+                <s:property value="#teacher.tname"/>
+              </s:iterator>
+            </s:a>
+            <s:a href="everyOneLogout.action">注销</s:a>
           </div>
-
           <li class="nav-divider"></li>
-          <li mid="tab1" funurl="../companys/student-information.jsp"><a tabindex="-1" href="javascript:void(0);">查看学生个人信息入口</a></li>
-          <li mid="tab2" funurl="../teachers/teachermanger-studentscore.jsp"><a tabindex="-1" href="javascript:void(0);">查询学生成绩入口</a></li>
+          <li mid="tab1" funurl="getStudentForTeacher.action"><a tabindex="-1" href="javascript:void(0);">查询学生成绩</a></li>
+          <li mid="tab2" funurl="../teachers/teacher-main.jsp"><a tabindex="-1" href="javascript:void(0);">管理学生</a></li>
         </ul>
       </div>
     </div>

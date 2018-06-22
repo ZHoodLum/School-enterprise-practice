@@ -14,7 +14,7 @@
         <property name="driverClass" value="${jdbc.driver}" />
         <property name="jdbcUrl" value="${jdbc.url}" />
         <property name="user" value="${jdbc.user}" />
-        <property name="password" value="mysql" />
+        <property name="password" value="${jdbc.password}" />
     </bean>
 
     <!-- Hibernate配置相关文件 -->
@@ -34,6 +34,7 @@
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
         </property>
+
         <!-- 配置Hibernate的映射文件 -->
         <property name="mappingResources">
             <list>
@@ -42,18 +43,54 @@
                 <value>com/school/vo/StudentinfoVo.hbm.xml</value>
                 <value>com/school/vo/UserinfoVo.hbm.xml</value>
                 <value>com/school/vo/JobinfoVo.hbm.xml</value>
-
-
+                <value>com/school/vo/EnterpriseStudentinfo1Vo.hbm.xml</value>
+                <value>com/school/vo/EnterpriseStudentinfo2Vo.hbm.xml</value>
+                <value>com/school/vo/TeacherStudentinfoVo.hbm.xml</value>
+                <value>com/school/vo/ResumeVo.hbm.xml</value>
+                <value>com/school/vo/ClassinfoVo.hbm.xml</value>
+            </list>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.school.vo.EnterpriseStudentinfo1Vo</value>
+                <value>com.school.vo.EnterpriseStudentinfo2Vo</value>
+                <value>com.school.vo.TeacherStudentinfoVo</value>
+                <value>com.school.vo.ResumeVo</value>
+                <value>com.school.vo.ClassinfoVo</value>
             </list>
         </property>
     </bean>
-
+    <!--定义事务管理器-->
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+    <!--定义事务-->
+    <bean id="transactionInterceptor"
+          class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager" ref="transactionManager" />
+        <!-- 配置事务属性 -->
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager" />
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*Dao</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>transactionInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--<tx:annotation-driven transaction-manager="transactionManager" />-->
     <!-- 该注解自动装配bean（省略getter and setter）-->
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
@@ -62,12 +99,30 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <!--企业查询递交简历的学生的信息的dao-->
+    <bean name="Enterprise_Studentinfo1Dao" class="com.school.dao.Enterprise_Studentinfo1Dao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!--企业查询实习学生的信息的dao-->
+    <bean name="Enterprise_Studentinfo2Dao" class="com.school.dao.Enterprise_Studentinfo2Dao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!--教师与学生中间表的DAO-->
+    <bean id="teacher_studentinfoDao" class="com.school.dao.Teacher_StudentInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
     <bean id="enterPriseService" class="com.school.service.EnterPriseService">
+        <property name="studentInfoDao" ref="studentInfoDao"/>
+        <property name="teacherDao" ref="teacherDao"/>
         <property name="enterPriseDao" ref="enterPriseDao"/>
+        <property name="enterprise_studentinfo1" ref="Enterprise_Studentinfo1Dao"/>
+        <property name="enterprise_studentinfo2" ref="Enterprise_Studentinfo2Dao"/>
+        <property name="teacher_studentinfoDao" ref="teacher_studentinfoDao"/>
     </bean>
 
     <bean id="enterPriseAction" class="com.school.action.EnterPriseAction">
-        <!--<property name="enterPriseService" ref="enterPriseService"/>-->
+        <property name="enterPriseService" ref="enterPriseService"/>
     </bean>
 
     <!--教师-->
@@ -77,11 +132,11 @@
 
     <bean id="teacherService" class="com.school.service.TeacherService">
         <property name="teacherDao" ref="teacherDao"/>
+        <property name="teacher_studentInfoDao" ref="teacher_studentinfoDao"/>
+        <property name="studentInfoDao" ref="studentInfoDao"/>
     </bean>
 
-    <bean id="teacherAction" class="com.school.action.TeacherAction">
-        <property name="teacherService" ref="teacherService"/>
-    </bean>
+
 
     <!--登录-->
     <bean id="loginDao" class="com.school.dao.LoginDao">
@@ -96,6 +151,10 @@
         <property name="loginService" ref="loginService"></property>
     </bean>
 
+    <bean id="classDao" class="com.school.dao.ClassDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
     <!--注册-->
     <bean id="registerDao" class="com.school.dao.RegisterDao">
         <property name="sessionFactory" ref="sessionFactory"></property>
@@ -103,6 +162,7 @@
 
     <bean id="registerService" class="com.school.service.RegisterService">
         <property name="registerDao" ref="registerDao"/>
+        <property name="classDao" ref="classDao"/>
     </bean>
 
     <bean id="registerAction" class="com.school.action.RegisterAction">
@@ -116,9 +176,68 @@
 
     <bean id="jobService" class="com.school.service.JobService">
         <property name="jobDao" ref="jobDao"></property>
+        <property name="e_s1Dao" ref="Enterprise_Studentinfo1Dao"/>
+        <property name="enterPriseDao" ref="enterPriseDao"/>
     </bean>
 
     <bean id="jobAction" class="com.school.action.JobAction">
         <property name="jobService" ref="jobService"></property>
+    </bean>
+
+    <!--学生修改-->
+    <bean name="studentInfoDao" class="com.school.dao.StudentInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean name="studentInfoService" class="com.school.service.StudentInfoService">
+        <property name="studentInfoDao" ref="studentInfoDao"/>
+    </bean>
+    <bean name="studentInfoUpdateAction" class="com.school.action.StudentInfoUpdateAction">
+        <property name="studentInfoService" ref="studentInfoService"/>
+    </bean>
+
+    <!--管理员功能模块-->
+    <bean id="userDao" class="com.school.dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="userService" class="com.school.service.UserService">
+        <property name="enterPriseDao" ref="enterPriseDao"/>
+        <property name="userDao" ref="userDao"/>
+        <property name="teacherDao" ref="teacherDao"/>
+        <property name="studentInfoDao" ref="studentInfoDao"/>
+        <property name="e_s2Dao" ref="Enterprise_Studentinfo2Dao"/>
+        <property name="t_sDao" ref="teacher_studentinfoDao"/>
+    </bean>
+    <bean id="userAction" class="com.school.action.UserAction">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <!--简历-->
+    <bean id="resumeDao" class="com.school.dao.ResumeDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="resumeService" class="com.school.service.ResumeService">
+        <property name="resumeDao" ref="resumeDao"/>
+        <property name="e_s2Dao" ref="Enterprise_Studentinfo2Dao"/>
+        <property name="e_s1Dao" ref="Enterprise_Studentinfo1Dao"/>
+    </bean>
+    <bean id="resumeAction" class="com.school.action.ResumeAction">
+        <property name="resumeService" ref="resumeService"/>
+    </bean>
+    <!--教师与学生-->
+    <bean id="teacherAction" class="com.school.action.TeacherAction">
+        <property name="teacherService" ref="teacherService"/>
+        <property name="studentInfoService" ref="studentInfoService"></property>
+    </bean>
+    <!--分页-->
+    <bean name="pageDao" class="com.school.dao.PageDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean name="pageService" class="com.school.service.PageService">
+        <property name="pageDao" ref="pageDao"></property>
+    </bean>
+
+    <bean name="pageAction" class="com.school.action.PageAction">
+        <property name="pageService" ref="pageService"></property>
     </bean>
 </beans>

@@ -9,7 +9,7 @@ public class TeacherVo {
     private String tCollege;
     private String tGender;
     private String tJob;
-    private int tphone;
+    private String tphone;
 
     public int getTid() {
         return tid;
@@ -59,11 +59,11 @@ public class TeacherVo {
         this.tJob = tJob;
     }
 
-    public int getTphone() {
+    public String getTphone() {
         return tphone;
     }
 
-    public void setTphone(int tphone) {
+    public void setTphone(String tphone) {
         this.tphone = tphone;
     }
 

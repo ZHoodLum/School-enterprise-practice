@@ -10,12 +10,19 @@ public class StudentinfoVo {
     private String major;
     private String city;
     private String email;
-    private int sPhone;
+    private String sPhone;
     private String sCollege;
-    private String tname;
     private String cE;
-    private String ename;
     private Integer sGrade;
+    private Integer cid;
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
 
     public int getSno() {
         return sno;
@@ -73,11 +80,11 @@ public class StudentinfoVo {
         this.email = email;
     }
 
-    public int getsPhone() {
+    public String getsPhone() {
         return sPhone;
     }
 
-    public void setsPhone(int sPhone) {
+    public void setsPhone(String sPhone) {
         this.sPhone = sPhone;
     }
 
@@ -89,28 +96,12 @@ public class StudentinfoVo {
         this.sCollege = sCollege;
     }
 
-    public String getTname() {
-        return tname;
-    }
-
-    public void setTname(String tname) {
-        this.tname = tname;
-    }
-
     public String getcE() {
         return cE;
     }
 
     public void setcE(String cE) {
         this.cE = cE;
-    }
-
-    public String getEname() {
-        return ename;
-    }
-
-    public void setEname(String ename) {
-        this.ename = ename;
     }
 
     public Integer getsGrade() {
@@ -135,15 +126,13 @@ public class StudentinfoVo {
                 Objects.equals(city, that.city) &&
                 Objects.equals(email, that.email) &&
                 Objects.equals(sCollege, that.sCollege) &&
-                Objects.equals(tname, that.tname) &&
                 Objects.equals(cE, that.cE) &&
-                Objects.equals(ename, that.ename) &&
                 Objects.equals(sGrade, that.sGrade);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(sno, sname, spwd, sGender, major, city, email, sPhone, sCollege, tname, cE, ename, sGrade);
+        return Objects.hash(sno, sname, spwd, sGender, major, city, email, sPhone, sCollege, cE, sGrade);
     }
 }

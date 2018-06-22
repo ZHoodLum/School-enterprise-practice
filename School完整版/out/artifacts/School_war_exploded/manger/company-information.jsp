@@ -17,66 +17,31 @@
         <span><hr class="hrLine" style="width:500px;"/>企业信息查询<hr class="hrLine" style="width:500px;"/></span>
     </div>
     <div id="recruitinformation">
+        <s:form theme="simple">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
 
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-
-            <tr align="center">
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业编号</td>
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业名称</td>
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业登陆密码</td>
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业地址</td>
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业电话</td>
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业邮箱</td>
-                <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">操作</td>
-            </tr>
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:15px;">153232</td>
-                <td style="padding:15px;">TUJy</td>
-                <td style="padding:15px;">1111</td>
-                <td style="padding:15px;">内蒙古通辽市</td>
-                <td style="padding:15px;">15645964949</td>
-                <td style="padding:15px;">1589847568@gmail.com</td>
-                <td align="center"><a href="update-company-information.jsp">修改</a>||<a href="****">删除</a></td>
-            </tr>
-
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:15px;">153232</td>
-                <td style="padding:15px;">TUJy</td>
-                <td style="padding:15px;">1111</td>
-                <td style="padding:15px;">内蒙古通辽市</td>
-                <td style="padding:15px;">15645964949</td>
-                <td style="padding:15px;">1589847568@gmail.com</td>
-                <td align="center"><a href="******">修改</a>||<a href="****">删除</a></td>
-            </tr>
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:15px;">153232</td>
-                <td style="padding:15px;">TUJy</td>
-                <td style="padding:15px;">1111</td>
-                <td style="padding:15px;">内蒙古通辽市</td>
-                <td style="padding:15px;">15645964949</td>
-                <td style="padding:15px;">1589847568@gmail.com</td>
-                <td align="center"><a href="******">修改</a>||<a href="****">删除</a></td>
-            </tr>
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:15px;">153232</td>
-                <td style="padding:15px;">TUJy</td>
-                <td style="padding:15px;">1111</td>
-                <td style="padding:15px;">内蒙古通辽市</td>
-                <td style="padding:15px;">15645964949</td>
-                <td style="padding:15px;">1589847568@gmail.com</td>
-                <td align="center"><a href="******">修改</a>||<a href="****">删除</a></td>
-            </tr>
-            <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
-                <td style="padding:15px;">153232</td>
-                <td style="padding:15px;">TUJy</td>
-                <td style="padding:15px;">1111</td>
-                <td style="padding:15px;">内蒙古通辽市</td>
-                <td style="padding:15px;">15645964949</td>
-                <td style="padding:15px;">1589847568@gmail.com</td>
-                <td align="center"><a href="******">修改</a>||<a href="****">删除</a></td>
-            </tr>
-
-        </table>
+                <tr align="center">
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业编号</td>
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业名称</td>
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业登陆密码</td>
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业地址</td>
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业电话</td>
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">企业邮箱</td>
+                    <td width="10%"  style="padding:10px; border-bottom: 2px dashed #6bb642;">操作</td>
+                </tr>
+                <s:iterator var="allEnterPrise" value="#session.allEnterPriseList">
+                    <tr align="center" style="padding:10px; border-bottom: 1px dashed #6bb642;">
+                        <td style="padding:15px;"><s:property value="#allEnterPrise.eid"/></td>
+                        <td style="padding:15px;"><s:property value="#allEnterPrise.ename"/></td>
+                        <td style="padding:15px;"><s:property value="#allEnterPrise.epwd"/></td>
+                        <td style="padding:15px;"><s:property value="#allEnterPrise.eadd"/></td>
+                        <td style="padding:15px;"><s:property value="#allEnterPrise.ephone"/></td>
+                        <td style="padding:15px;"><s:property value="#allEnterPrise.email"/></td>
+                        <td align="center"><a href="update-company-information.jsp">修改</a>||<s:a href="deleteEnterPrise?eid=%{#allEnterPrise.eid}">删除</s:a></td>
+                </tr>
+                </s:iterator>
+            </table>
+        </s:form>
     </div>
 </body>
 </html>

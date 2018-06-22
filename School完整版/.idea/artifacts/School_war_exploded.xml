@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="School:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/School_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="School/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="School" />
@@ -11,13 +10,14 @@
           <element id="library" level="project" name="Struts 2-2.5.14.1" />
           <element id="library" level="project" name="Hibernate 5.2.12-5.2.12" />
           <element id="library" level="project" name="Spring-4.3.14.RELEASE" />
-          <element id="library" level="project" name="mysql-connector-java-5.1.26" />
           <element id="library" level="project" name="c3p0-0.9.1.2" />
           <element id="library" level="project" name="commons-dbcp" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.26" />
           <element id="library" level="project" name="struts2-spring-plugin-2.5.14.1" />
           <element id="library" level="project" name="spring-web-4.3.13.RELEASE" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="School/web/Web" />
     </root>
   </artifact>
 </component>
